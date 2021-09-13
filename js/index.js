@@ -1,3 +1,4 @@
+// funcionalidad of styles
 let valor = 10
 const table = document.getElementById('table');
 const openRow = () => {
@@ -63,7 +64,13 @@ const genlistDobles = () => {
     }while(i < lista.length)
     return dobles;
 }
-
+// validation of list item
+const validation = (lista) => {
+    let valorNan = lista.map(item => {
+        return item.costo === NaN
+    })
+    return valorNan.length > 0 ? false : true
+}
 // calulo of index learnig
 const calIndexLearn = () => {
     let lista = genlistDobles()
@@ -81,8 +88,14 @@ const calIndexLearn = () => {
 // render result
 const mostrarResult1 = (id) => {
     let result = calIndexLearn()
-    let salida = document.getElementById(id)
-    salida.innerText = `${(result*100).toFixed(2)}%`
+    let salida = document.getElementById(id);
+    if(result){
+        salida.innerText = `${(result*100).toFixed(2)}%`
+        let section = document.getElementsByClassName('main__section');
+        Array.prototype.forEach.call(section, item => item.classList.remove('opacity'));
+    } else {
+        salida.innerText = 'llené todos los campos!'
+    }
 }
 
 // function for calculate 

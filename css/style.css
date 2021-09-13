@@ -217,6 +217,12 @@ html {
     border-top-right-radius: 1.2rem;
     
 }
+
+/* styles interactivo */
+.opacity {
+    opacity: .2;
+}
+
 .footer > a {
     color: #fff;
     text-decoration: none;
