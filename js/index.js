@@ -15,11 +15,11 @@ const deleteRow = () => {
         let reduce = Array.prototype.slice.call(rows, 0, log - 2)
         table.innerHTML = `<span class="section__card--input width--column"><span id="numUnidades">Nro. de Uds.</span><span id="newUnidades"></span></span>
         <select class="section__card--input width--column" name="medias" id="medidas">
-            <option value="Km">horas</option>
-            <option value="hm">dias</option>
-            <option value="dam">metros</option>
-            <option value="m">bs.</option>
-            <option value="dm">$</option>
+            <option value="horas">horas</option>
+            <option value="dias">dias</option>
+            <option value="metros">metros</option>
+            <option value="bs.">bs.</option>
+            <option value="$">$</option>
         </select>`;
         reduce.forEach(element => {
             table.appendChild(element)
