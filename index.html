@@ -4,10 +4,114 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculo de Curva de la Expiriencia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,400;0,700;1,200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <script src="./js/main.js"></script>
+    <header class="header width--global">
+        <div class="header__img"></div>
+        <p class="header__text">Calculo de la curva de Experiencia</p>
+        <h1 class="header__title">Administración de Operaciones I</h1>
+    </header>
+    <main class="main width--global">
+        <section class="main__section">
+            <div class="section__card">
+                <h2 class="section__card--title">Indice de Aprendizaje:</h2>
+                <p class="section__card--text">Ingrese los datos a la tabla:</p>
+                <img class="section__card--img" src="https://cdn-icons-png.flaticon.com/512/2304/2304241.png" alt="imagen de un cuadrado">
+                <form class="section__card--form margin-top" action="javascript:void(0)">
+                    <label class="section__card--table" id="table">
+                        <span class="section__card--input width--column" >Nro. de Unidades</span>
+                        <select class="section__card--input width--column" name="medias" id="medidas">
+                            <option value="horas">horas</option>
+                            <option value="dias">dias</option>
+                            <option value="metros">metros</option>
+                            <option value="bs.">bs.</option>
+                            <option value="$">$</option>
+                        </select>
+                        <span class="section__card--input width--column column--table" >1</span>
+                        <input class="section__card--input width--column column--table" type="number" placeholder="cantidad" id="fristValue">
+                        <span class="section__card--input width--column column--table" >2</span>
+                        <input class="section__card--input width--column column--table" type="number" placeholder="cantidad">
+                        <span class="section__card--input width--column column--table" >3</span>
+                        <input class="section__card--input width--column column--table" type="number" placeholder="cantidad">
+                        <span class="section__card--input width--column column--table" >4</span>
+                        <input class="section__card--input width--column column--table" type="number" placeholder="cantidad">
+                        <span class="section__card--input width--column column--table" >5</span>
+                        <input class="section__card--input width--column column--table" type="number" placeholder="cantidad">
+                        <span class="section__card--input width--column column--table" >6</span>
+                        <input class="section__card--input width--column column--table" type="number" placeholder="cantidad">
+                        <span class="section__card--input width--column column--table" >7</span>
+                        <input class="section__card--input width--column column--table" type="number" placeholder="cantidad">
+                        <span class="section__card--input width--column column--table" >8</span>
+                        <input class="section__card--input width--column column--table" type="number" placeholder="cantidad">
+                        <span class="section__card--input width--column column--table" >9</span>
+                        <input class="section__card--input width--column column--table" type="number" placeholder="cantidad">
+                        <span class="section__card--input width--column column--table" >10</span>
+                        <input class="section__card--input width--column column--table" type="number" placeholder="cantidad">
+                    </label>
+                    <label style="flex-direction: row; justify-content: center">
+                        <button class="btn" onclick="openRow()">new row</button>
+                        <button class="btn btn__area btn__area--cuadrado" onclick="deleteRow()">detele row</button>
+                    </label>
+                </form>
+                <br>
+                <div class="section__card--botones">
+                    <button class="btn" onclick="mostrarResult1(this.value)" value="salidaI">Get learning index</button>
+                    <!-- <button class="btn btn__area btn__area--cuadrado" id="btnAc">Get Area</button> -->
+                </div>
+                <div class="section__card--salida">
+                    <p class="cuadro btn__area--cuadrado" id="salidaI">result</p>
+                </div>
+            </div>
+        </section>
+        <section class="main__section main__section--background1">
+            <div class="section__card">
+                <h2 class="section__card--title">Acumulado</h2>
+                <p class="section__card--text">Ingrese los campos requeridos:</p>
+                <img class="section__card--img" src="https://cdn-icons-png.flaticon.com/512/2519/2519435.png" alt="imagen de un triangulo">
+                <form class="section__card--form">
+                    <label>
+                        <input class="section__card--input" type="number" placeholder="desde" id="start" min="1">
+                        <input class="section__card--input" type="number" placeholder="hasta" id="end" min="1">
+                    </label>
+                </form>
+                <div class="section__card--botones">
+                    <!-- <button class="btn btn--tri" id="btnPt">Get Perimeter</button> -->
+                    <button class="btn btn__area btn__area--tri" onclick="mostrarResult2(this.value)" value="salidaA">Get Accumulated</button>
+                </div>
+                <div class="section__card--salida">
+                    <p class="cuadro btn__area--tri" id="salidaA">result</p>
+                </div>
+            </div>
+        </section>
+        <section class="main__section main__section--background2">
+            <div class="section__card">
+                <h2 class="section__card--title">Unidades</h2>
+                <p class="section__card--text">Ingresa la unidad requerida:</p>
+                <img class="section__card--img" src="https://cdn-icons-png.flaticon.com/512/1118/1118935.png" alt="imagen de un Circulo">
+                <form class="section__card--form margin-top">
+                    <label>
+                        <input class="section__card--input" type="number" placeholder="nro. de unidad" id="unidad" min="1">
+                    </label>
+                </form>
+                <div class="section__card--botones">
+                    <button class="btn btn--cir" onclick="mostrarResult3(this.value)" value="salidaU">Get Unidad</button>
+                    <!-- <button class="btn btn__area btn__area--cir" id="btnAr">Get Area</button> -->
+                </div>
+                <div class="section__card--salida">
+                    <p class="cuadro btn__area--cir" id="salidaU">result</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer width--global">
+        <a href="https://masterjhonny.github.io/talleres-del-curso/">volver atras</a>
+        <a href="https://masterjhonny.github.io/talleres-del-curso/descuentos/index.html">ver mas</a>
+    </footer>
+    <script src="./js/index.js"></script>
 </body>
 </html>
