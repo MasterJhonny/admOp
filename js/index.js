@@ -13,8 +13,8 @@ const deleteRow = () => {
     let log = rows.length;
     if(log !== 2){
         let reduce = Array.prototype.slice.call(rows, 0, log - 2)
-        table.innerHTML = `<span class="section__card--input width--column" >Nro. de Unidades</span>
-        <select class="section__card--input width--column" name="medias" id="medidasC">
+        table.innerHTML = `<span class="section__card--input width--column"><span id="numUnidades">Nro. de Uds.</span><span id="newUnidades"></span></span>
+        <select class="section__card--input width--column" name="medias" id="medidas">
             <option value="Km">horas</option>
             <option value="hm">dias</option>
             <option value="dam">metros</option>
