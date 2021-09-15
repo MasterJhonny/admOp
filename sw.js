@@ -13,6 +13,9 @@ self.addEventListener('fetch', event => {
     }
     // serh of cache
     event.respondWith(cacheResponse(request));
+
+    // apdata cacheResponse
+    event.waitUntil(updateCache(request));
 })
 
 // file cache
@@ -30,4 +33,10 @@ async function cacheResponse(request) {
     const cache = await caches.open(VERSION);
     const response = await cache.match(request);
     return response || fetch(request);
+}
+
+async function updateCache(request) {
+    const cache = await caches.open(VERSION);
+    const response = await fetch(request);
+    return cache.put(request, response);
 }

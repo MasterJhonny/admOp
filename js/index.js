@@ -76,23 +76,22 @@ const genListItem = () => {
 
 // calulo of index learnig
 const genlistDobles = () => {
+    // debugger;
     let dobles = new Array();
     let lista = genListItem();
     // sacando list de dobles
     let i = 1
-    do{
-        dobles.push(lista[i-1])
-        i = i*2
-    }while(i < lista.length)
+    if(lista.length > 2){
+        do{
+            dobles.push(lista[i-1])
+            i = i*2
+        }while(i < lista.length)
+        return dobles;
+    }
+    dobles = lista
     return dobles;
 }
-// validation of list item
-const validation = (lista) => {
-    let valorNan = lista.map(item => {
-        return item.costo === NaN
-    })
-    return valorNan.length > 0 ? false : true
-}
+
 // calulo of index learnig
 const calIndexLearn = () => {
     let lista = genlistDobles()
