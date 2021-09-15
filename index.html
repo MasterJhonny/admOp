@@ -60,7 +60,7 @@
                 </form>
                 <br>
                 <div class="section__card--botones">
-                    <button class="btn" onclick="mostrarResult1(this.value)" value="salidaI">Get learning index</button>
+                    <button class="btn" id="btn1" value="salidaI">Get learning index</button>
                     <!-- <button class="btn btn__area btn__area--cuadrado" id="btnAc">Get Area</button> -->
                 </div>
                 <div class="section__card--salida">
@@ -75,13 +75,13 @@
                 <img class="section__card--img" src="https://cdn-icons-png.flaticon.com/512/2519/2519435.png" alt="imagen de un triangulo">
                 <form class="section__card--form">
                     <label>
-                        <input class="section__card--input" type="number" placeholder="desde" id="start" min="1">
-                        <input class="section__card--input" type="number" placeholder="hasta" id="end" min="1">
+                        <input class="section__card--input" type="number" placeholder="desde" id="start" min="1" disabled >
+                        <input class="section__card--input" type="number" placeholder="hasta" id="end" min="1" disabled >
                     </label>
                 </form>
                 <div class="section__card--botones">
                     <!-- <button class="btn btn--tri" id="btnPt">Get Perimeter</button> -->
-                    <button class="btn btn__area btn__area--tri" onclick="mostrarResult2(this.value)" value="salidaA">Get Accumulated</button>
+                    <button class="btn btn__area btn__area--tri no--button" id="btn2" value="salidaA" disabled ></button>
                 </div>
                 <div class="section__card--salida">
                     <p class="cuadro btn__area--tri" id="salidaA">result</p>
@@ -95,11 +95,11 @@
                 <img class="section__card--img" src="https://cdn-icons-png.flaticon.com/512/1118/1118935.png" alt="imagen de un Circulo">
                 <form class="section__card--form margin-top">
                     <label>
-                        <input class="section__card--input" type="number" placeholder="nro. de unidad" id="unidad" min="1">
+                        <input class="section__card--input" type="number" placeholder="nro. de unidad" id="unidad" min="1" disabled>
                     </label>
                 </form>
                 <div class="section__card--botones">
-                    <button class="btn btn--cir" onclick="mostrarResult3(this.value)" value="salidaU">Get Unidad</button>
+                    <button class="btn btn--cir no--button" id="btn3" value="salidaU" disabled ></button>
                     <!-- <button class="btn btn__area btn__area--cir" id="btnAr">Get Area</button> -->
                 </div>
                 <div class="section__card--salida">

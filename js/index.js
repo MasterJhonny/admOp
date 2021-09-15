@@ -1,3 +1,8 @@
+// const of buttons
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2');
+const btn3 = document.getElementById('btn3');
+
 // funcionalidad of styles
 let valor = 10
 const table = document.getElementById('table');
@@ -27,6 +32,23 @@ const deleteRow = () => {
         })
     }
 }
+
+// functio disable button
+const disableButton = () => {
+    btn2.disabled = false
+    btn2.classList.remove('no--button')
+    btn2.innerText = 'Get Accumulated'
+    btn3.disabled = false
+    btn3.classList.remove('no--button')
+    btn3.innerText = 'Get Unidad'
+    let start = document.getElementById('start');
+    let end = document.getElementById('end');
+    let unidad = document.getElementById('unidad');
+    start.disabled = false
+    end.disabled = false
+    unidad.disabled = false
+}
+
 // function object table lista
 function objectItem (num) {
     this.num = num;
@@ -93,6 +115,7 @@ const mostrarResult1 = (id) => {
         salida.innerText = `${(result*100).toFixed(2)}%`
         let section = document.getElementsByClassName('main__section');
         Array.prototype.forEach.call(section, item => item.classList.remove('opacity'));
+        disableButton()
     } else {
         salida.innerText = 'llené todos los campos!'
     }
@@ -136,3 +159,15 @@ const mostrarResult3 = (id) => {
 
 
 
+// events buttons
+btn1.onclick = () => {
+    mostrarResult1("salidaI")
+}
+
+btn2.onclick = () => {
+    mostrarResult2("salidaA")
+}
+
+btn3.onclick = () => {
+    mostrarResult3("salidaU")
+}

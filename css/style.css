@@ -222,6 +222,15 @@ html {
 .opacity {
     opacity: .2;
 }
+.no--button {
+    width: 40px;
+    height: 32px;
+    background: url(https://cdn-icons-png.flaticon.com/512/2142/2142430.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    cursor: not-allowed;
+}
 
 .footer > a {
     color: #fff;
