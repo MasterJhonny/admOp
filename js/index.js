@@ -157,8 +157,6 @@ const mostrarResult3 = (id) => {
     salida.innerText = `${costoUnidad.toFixed(2)} ${medida}.`
 }
 
-
-
 // events buttons
 btn1.onclick = () => {
     mostrarResult1("salidaI")
@@ -170,4 +168,10 @@ btn2.onclick = () => {
 
 btn3.onclick = () => {
     mostrarResult3("salidaU")
+}
+
+
+// services worques
+if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(error => console.error(error));
 }
